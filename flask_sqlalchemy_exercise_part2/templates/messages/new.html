@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <h1>Add a new message</h1>
+        <form action="{{url_for('messages_index', user_id=user.id)}}" method="POST">
+            <label>
+                Message:
+                <input type="text" name="content">
+            </label>
+            <input type="submit" value="Add message">
+        </form>
+    {% endblock %}

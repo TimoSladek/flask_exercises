@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <a href="{{url_for('index')}}">See all users</a>
+        {{user.first_name}} {{user.last_name}}
+        <a href="{{url_for('edit', id=user.id)}}">Edit user</a>
+    {% endblock %}

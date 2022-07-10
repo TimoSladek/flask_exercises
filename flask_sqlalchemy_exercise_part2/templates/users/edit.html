@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <a href="{{url_for('index')}}">See all users</a>
+
+        <form action="{{url_for('show', id=user.id)}}" method="POST">
+            <label>
+                First name:
+                <input type="text" name="first_name" value="{{user.first_name}}">
+            </label>
+            <label>
+                Last name:
+                <input type="text" name="last_name" value="{{user.last_name}}">
+            </label>
+            <label>
+                img url:
+                <input type="text" name="img_url" value="user.img_url">
+            </label>
+            <input type="hidden" name="method" value="PATCH">
+            <input type="submit" value="Edit">
+        </form>
+
+        <form action="{{url_for('show', id=user.id)}}" method="POST">
+            <input type="hidden" name="method" value="DELETE">
+            <input type="submit" value="Delete user">
+        </form>
+    {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <form action="{{url_for('index')}}" method="POST">
+            {{ form.hidden_tag() }}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                <p>
+                    {{field.label}}
+                    {{field}}
+                </p>
+            {% endfor %}
+            <input type="submit" value="Add user">
+        </form>
+    {% endblock %}
