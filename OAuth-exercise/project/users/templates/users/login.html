@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{{url_for('users.new')}}">Sign up!</a>
+<br/>
+<a href="{{url_for('users.oauth_login')}}">Login using twitter</a>
+<h1>Login!</h1>
+<form action="{{url_for('users.login')}}" method="POST">
+    {{ form.hidden_tag() }}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+    <p>
+        {{field.label}}
+        {{field}}
+    </p>
+    {% endfor %}
+    <input type="submit" value="Login">
+</form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <a href="{{url_for('employees.index')}}">See all employees</a>
+    <h1>Add employee</h1>
+    <form action="{{url_for('employees.index')}}" method="POST">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+            <p>
+                {{field.label}}
+                {{field}}
+            </p>
+        {% endfor %}
+        <button>Add employee</button>
+    </form>
+
+{% endblock %}

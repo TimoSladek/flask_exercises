@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <a href="{{url_for('departments.index')}}">See all departments</a>
+    <h1>Edit department</h1>
+
+    <form action="{{url_for('departments.show', id=department.id)}}" method="POST">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+            <p>
+                {{field.label}}
+                {{field}}
+            </p>
+        {% endfor %}
+        <input type="hidden" name="method" value="PATCH">
+        <button>Edit department</button>
+    </form>
+
+{% endblock %}

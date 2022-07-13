@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <a href="{{url_for('employees.index')}}">All employee</a>
+    <h1>{{employee.name}}</h1>
+    <h2>{{employee.years_at_company}} y. at company</h2>
+    <ul>
+        {% for department in departments %}
+            <li>
+                {{department.name}}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

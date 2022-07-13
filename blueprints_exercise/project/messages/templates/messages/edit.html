@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <h1>Edit a message</h1>
+        <form action="{{url_for('messages.show', user_id=message.user_id, id=message.id)}}" method="POST">
+            {{ form.hidden_tag() }}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                <p>
+                    {{ field.label }}
+                    {{ field }}
+                </p>
+            {% endfor %}
+            <input type="hidden" name="method" value="PATCH">
+            <input type="submit" value="Edit message">
+        </form>
+    {% endblock %}

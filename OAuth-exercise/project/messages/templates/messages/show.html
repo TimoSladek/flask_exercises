@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{{url_for('messages.index', user_id=message.user_id)}}">See all messages</a>
+{{message.content}}
+<a href="{{url_for('messages.edit', user_id=message.user_id, id=message.id)}}">Edit message</a>
+{% endblock %}
