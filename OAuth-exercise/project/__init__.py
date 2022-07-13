@@ -22,8 +22,8 @@ twitter = oauth.remote_app('twitter',
                            request_token_url='https://api.twitter.com/oauth/request_token',
                            access_token_url='https://api.twitter.com/oauth/access_token',
                            authorize_url='https://api.twitter.com/oauth/authenticate',
-                           consumer_key='vraODuzd5YvY2AxLuVfpsy97k',
-                           consumer_secret='ATA55iItKlR3j55qdR01q0ROOxMCYkNE9jycB0vFaNcEtd99Bn'
+                           consumer_key='',
+                           consumer_secret=''
                            )
 
 from project.users.views import users_blueprint
